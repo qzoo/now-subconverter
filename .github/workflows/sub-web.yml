@@ -22,7 +22,7 @@ jobs:
     - name: Update sub-web
       run: |
         rm -rf sub-web
-        git clone https://github.com/zhongfly/sub-web.git
+        git clone https://github.com/qzoo/sub-web.git
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
@@ -48,7 +48,7 @@ jobs:
       with:
         author_name: GitHub Action
         author_email: noreply@github.com
-        message: "Update sub-web from zhongfly/sub-web"
+        message: "Update sub-web from qzoo/sub-web"
         add: "-A"
       env:
         token: ${{ secrets.GITHUB_TOKEN }}
