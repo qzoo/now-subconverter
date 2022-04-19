@@ -1,6 +1,6 @@
 # 内容：国外媒体列表
-# 更新：2021-02-27 19:10:51
-# 数量：321条
+# 更新：2021-12-26 22:03:43
+# 数量：314条
 
 # ABC
 DOMAIN-SUFFIX,edgedatg.com
@@ -20,17 +20,23 @@ DOMAIN-SUFFIX,c4assets.com
 DOMAIN-SUFFIX,channel4.com
 
 # Amazon
-USER-AGENT,InstantVideo.US*
-USER-AGENT,Prime%20Video*
-DOMAIN, atv-ps.amazon.com
-DOMAIN, fls-na.amazon.com
-DOMAIN-SUFFIX, media-amazon.com
+DOMAIN-KEYWORD,avoddashs
+DOMAIN,atv-ps.amazon.com
+DOMAIN,avodmp4s3ww-a.akamaihd.net
+DOMAIN,d1v5ir2lpwr8os.cloudfront.net
+DOMAIN,d1xfray82862hr.cloudfront.net
+DOMAIN,d22qjgkvxw22r6.cloudfront.net
+DOMAIN,d25xi40x97liuc.cloudfront.net
+DOMAIN,d27xxe7juh1us6.cloudfront.net
+DOMAIN,d3196yreox78o9.cloudfront.net
+DOMAIN,dmqdd6hw24ucf.cloudfront.net
+DOMAIN,ktpx.amazon.com
 DOMAIN-SUFFIX,aiv-cdn.net
-DOMAIN-SUFFIX,amazonaws.co.uk
-DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-SUFFIX,aiv-delivery.net
 DOMAIN-SUFFIX,amazonvideo.com
-DOMAIN-SUFFIX,llnwd.net
-DOMAIN-SUFFIX,primevideo.com
+DOMAIN-SUFFIX,media-amazon.com
+DOMAIN-SUFFIX,pv-cdn.net
+URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/
 
 # AppleNews
 USER-AGENT,AppleNews*
@@ -53,9 +59,11 @@ DOMAIN,vod-thumb-uk-live.akamaized.net
 DOMAIN-SUFFIX,bbc.co
 DOMAIN-SUFFIX,bbc.co.uk
 DOMAIN-SUFFIX,bbc.com
+DOMAIN-SUFFIX,bbc.net.uk
 DOMAIN-SUFFIX,bbcfmt.hs.llnwd.net
 DOMAIN-SUFFIX,bbci.co
 DOMAIN-SUFFIX,bbci.co.uk
+DOMAIN-SUFFIX,bidi.net.uk
 
 # Bahamut
 USER-AGENT,Anime*
@@ -63,11 +71,9 @@ DOMAIN,gamer-cds.cdn.hinet.net
 DOMAIN,gamer2-cds.cdn.hinet.net
 DOMAIN-SUFFIX,bahamut.com.tw
 DOMAIN-SUFFIX,gamer.com.tw
-DOMAIN-SUFFIX,hinet.net
 
 # DAZN
 USER-AGENT,DAZN*
-DOMAIN-KEYWORD,livedazn
 DOMAIN-KEYWORD,voddazn
 DOMAIN,d151l6v8er5bdm.cloudfront.net
 DOMAIN-SUFFIX,d151l6v8er5bdm.cloudfront.net
@@ -121,45 +127,21 @@ DOMAIN-SUFFIX,encoretvb.com
 USER-AGENT,FOX%20NOW*
 DOMAIN-SUFFIX,fox.com
 DOMAIN-SUFFIX,foxdcg.com
-DOMAIN-SUFFIX,theplatform.com
 DOMAIN-SUFFIX,uplynk.com
 
-# FoxPlus
-USER-AGENT,FOXPlus*
-DOMAIN,cdn-fox-networks-group-green.akamaized.net
-DOMAIN,d3cv4a9a9wh0bt.cloudfront.net
-DOMAIN,foxsports01-i.akamaihd.net
-DOMAIN,foxsports02-i.akamaihd.net
-DOMAIN,foxsports03-i.akamaihd.net
-DOMAIN,staticasiafox.akamaized.net
-DOMAIN-SUFFIX,akamaized.net
-DOMAIN-SUFFIX,foxplus.com
-DOMAIN-SUFFIX,theplatform.com
-
 # HBO
-USER-AGENT,HBO%20GO%20PROD%20HKG*
 USER-AGENT,HBO%20NOW*
 USER-AGENT,HBOMAX*
-DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
-DOMAIN,bcbolthboa-a.akamaihd.net
-DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net
-DOMAIN,dai3fd1oh325y.cloudfront.net
-DOMAIN,hboasia1-i.akamaihd.net
-DOMAIN,hboasia2-i.akamaihd.net
-DOMAIN,hboasia3-i.akamaihd.net
-DOMAIN,hboasia4-i.akamaihd.net
-DOMAIN,hboasia5-i.akamaihd.net
-DOMAIN,players.brightcove.net
-DOMAIN,s3-ap-southeast-1.amazonaws.com
 DOMAIN-SUFFIX,hbo.com
 DOMAIN-SUFFIX,hbogo.com
-DOMAIN-SUFFIX,hbogoasia.com
-DOMAIN-SUFFIX,hbogoasia.hk
 DOMAIN-SUFFIX,hbomax.com
+DOMAIN-SUFFIX,hbomaxcdn.com
 DOMAIN-SUFFIX,hbonow.com
 
 # HBO_GO_HKG
-USER-AGENT,HBO%20GO%20PROD%20HKG*
+USER-AGENT,HBO%20GO%20PROD*
+DOMAIN-KEYWORD,.hbogoasia.
+DOMAIN-KEYWORD,hbogoasia
 DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
 DOMAIN,bcbolthboa-a.akamaihd.net
 DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net
@@ -169,8 +151,13 @@ DOMAIN,hboasia2-i.akamaihd.net
 DOMAIN,hboasia3-i.akamaihd.net
 DOMAIN,hboasia4-i.akamaihd.net
 DOMAIN,hboasia5-i.akamaihd.net
+DOMAIN,hboasialive.akamaized.net
+DOMAIN,hbogoprod-vod.akamaized.net
+DOMAIN,hbolb.onwardsmg.com
+DOMAIN,hbounify-prod.evergent.com
 DOMAIN,players.brightcove.net
 DOMAIN,s3-ap-southeast-1.amazonaws.com
+DOMAIN-SUFFIX,hboasia.com
 DOMAIN-SUFFIX,hbogoasia.com
 DOMAIN-SUFFIX,hbogoasia.hk
 
@@ -252,6 +239,8 @@ DOMAIN-SUFFIX,my5.tv
 
 # MyTVSuper
 USER-AGENT,mytv*
+DOMAIN-KEYWORD,nowtv100
+DOMAIN-KEYWORD,rthklive
 DOMAIN,mytvsuperlimited.hb.omtrdc.net
 DOMAIN,mytvsuperlimited.sc.omtrdc.net
 DOMAIN-SUFFIX,mytvsuper.com
@@ -259,7 +248,7 @@ DOMAIN-SUFFIX,tvb.com
 
 # Netflix
 USER-AGENT,Argo*
-DOMAIN-KEYWORD,dualstack.apiproxy-device-prod-nlb-
+DOMAIN-KEYWORD,dualstack.apiproxy-
 DOMAIN-KEYWORD,dualstack.ichnaea-web-
 DOMAIN,netflix.com.edgesuite.net
 DOMAIN-SUFFIX,fast.com
@@ -338,6 +327,7 @@ DOMAIN-SUFFIX,pscdn.co
 DOMAIN-SUFFIX,scdn.co
 DOMAIN-SUFFIX,spoti.fi
 DOMAIN-SUFFIX,spotify.com
+DOMAIN-SUFFIX,spotifycdn.com
 DOMAIN-SUFFIX,spotifycdn.net
 
 # TIDAL
@@ -408,3 +398,4 @@ USER-AGENT,*YouTubeMusic*
 USER-AGENT,*com.google.ios.youtubemusic*
 USER-AGENT,YouTubeMusic*
 USER-AGENT,com.google.ios.youtubemusic*
+DOMAIN,music.youtube.com
