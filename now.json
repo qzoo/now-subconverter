@@ -20,28 +20,25 @@
             }
         }
     ],
-    "routes": [
-        {
-            "src": "/(js|css|fonts)/(.*)",
-            "headers": {
-                "cache-control": "max-age=31536000, immutable"
-            },
-            "dest": "sub-web/$1/$2"
-        },
-        {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/",
-            "dest": "sub-web/index.html"
-        },
-        {
-            "src": "/favicon\\.ico",
-            "dest": "sub-web/favicon.ico"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "subconverter/subconverter.exe"
-        }
-    ]
+    "rewrites": [
+    {
+      "source": "/(js|css|fonts)/(.*)",
+      "destination": "/sub-web/$1/$2",
+      "headers": {
+        "cache-control": "max-age=31536000, immutable"
+      }
+    },
+    {
+      "source": "/",
+      "destination": "/sub-web/index.html"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/sub-web/favicon.ico"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/subconverter/subconverter.exe"
+    }
+  ]
 }
