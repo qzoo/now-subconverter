@@ -9,7 +9,7 @@
             "use": "@now/static"
         },
         {
-            "src": "server.js",
+            "src": "subconverter/server.js",
             "use": "@now/node",
             "config": {
                 "maxLambdaSize": "50mb",
@@ -40,7 +40,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "server.js"
+            "dest": "subconverter/server.js"
         }
     ]
 }
