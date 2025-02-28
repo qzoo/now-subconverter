@@ -13,7 +13,7 @@
       "use": "@vercel/node",
       "config": {
         "includeFiles": ["subconverter/**"],
-        "maxLambdaSize": "50mb"  // 确保二进制文件不超过限制
+        "maxLambdaSize": "50mb"
       }
     }
     ]
