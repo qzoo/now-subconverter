@@ -23,4 +23,4 @@ app.all('*', (req, res) => {
 // 处理退出信号
 process.on('SIGTERM', () => {
   converter.kill();
-  process.exit(0
+  process.exit(0)
