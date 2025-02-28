@@ -23,10 +23,7 @@
     "rewrites": [
     {
       "source": "/(js|css|fonts)/(.*)",
-      "destination": "/sub-web/$1/$2",
-      "headers": {
-        "cache-control": "max-age=31536000, immutable"
-      }
+      "destination": "/sub-web/$1/$2"
     },
     {
       "source": "/",
@@ -39,6 +36,17 @@
     {
       "source": "/(.*)",
       "destination": "/subconverter/subconverter.exe"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(js|css|fonts)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable"
+        }
+      ]
     }
   ]
 }
