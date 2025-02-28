@@ -37,7 +37,7 @@
       "dest": "sub-web/favicon.ico"
     },
     {
-      "src": "/sub/(.*)",     // 匹配 /sub/ 开头的请求
+      "src": "/sub/(.*)",
       "dest": "subconverter/shim.js"
     }
   ]
