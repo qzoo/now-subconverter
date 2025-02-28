@@ -1,7 +1,5 @@
 {
     "version": 2,
-    "outputDirectory": "build",
-    "public": true,
     "github": {
         "silent": true
     },
@@ -19,7 +17,7 @@
                 "includeFiles": [
                     "subconverter/**"
                 ],
-                "outputDirectory": "subconverter"
+                "outputDirectory": "/subconverter"
             }
         }
     ],
