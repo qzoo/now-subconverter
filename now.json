@@ -43,6 +43,5 @@
             "src": "/(.*)",
             "dest": "/subconverter/subconverter.exe"
         }
-    ],
-    "nodeVersion": "18.x"
+    ]
 }
