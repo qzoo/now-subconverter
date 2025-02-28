@@ -14,10 +14,10 @@
             "config": {
                 "port": 25500,
                 "timeout": 1500,
+                "output": "public",
                 "includeFiles": [
                     "subconverter/**"
-                ],
-                "output": "/subconverter"
+                ]
             }
         }
     ],
