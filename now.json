@@ -10,7 +10,7 @@
     },
     {
       "src": "subconverter/subconverter",
-      "use": "@vercel/static-files"
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
