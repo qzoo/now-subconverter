@@ -102,7 +102,7 @@ jobs:
       id: wait
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        checkName: "Linux x86_64 Build"
+        checkName: "Linux amd64 Build"
         ref: ${{ steps.get_sha.outputs.sha }}
         repo: subconverter
         owner: tindy2013
