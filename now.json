@@ -9,7 +9,7 @@
             "use": "@now/static"
         },
         {
-            "src": "subconverter/server.js",  // 指定新的入口文件
+            "src": "server.js",
             "use": "@now/node",
             "config": {
                 "maxLambdaSize": "50mb",
