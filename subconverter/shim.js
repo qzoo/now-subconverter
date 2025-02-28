@@ -24,3 +24,4 @@ app.all('*', (req, res) => {
 process.on('SIGTERM', () => {
   converter.kill();
   process.exit(0)
+}
