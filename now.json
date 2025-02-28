@@ -16,7 +16,7 @@
             "maxLambdaSize": "50mb"
           }
         }
-    ]
+    ],
     "routes": [
         {
             "src": "/(js|css|fonts)/(.*)",
