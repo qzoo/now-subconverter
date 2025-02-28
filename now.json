@@ -42,7 +42,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/subconverter.exe"
+            "dest": "/subconverter/subconverter.exe"
         }
     ]
 }
