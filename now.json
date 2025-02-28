@@ -1,16 +1,19 @@
 {
     "version": 2,
+    "github": {
+        "silent": true
+    },
     "builds": [
         {
             "src": "sub-web/**",
-            "use": "@vercel/static"
+            "use": "@now/static"
         },
         {
-            "src": "subconverter/server.js",
-            "use": "@vercel/node",
+            "src": "subconverter/subconverter.exe",
+            "use": "now-static-bin",
             "config": {
-                "maxLambdaSize": "50mb",
-                "maxDuration": 60,
+                "port": 25500,
+                "timeout": 1500,
                 "includeFiles": [
                     "subconverter/**"
                 ]
@@ -37,8 +40,8 @@
             "dest": "sub-web/favicon.ico"
         },
         {
-            "src": "/",
-            "dest": "subconverter/server.js"
+            "src": "/(.*)",
+            "dest": "subconverter/subconverter.exe"
         }
     ]
 }
