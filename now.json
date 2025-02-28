@@ -4,18 +4,18 @@
         "silent": true
     },
     "builds": [
-    {
-      "src": "sub-web/**",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "subconverter/subconverter",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": ["subconverter/**"],
-        "maxLambdaSize": "50mb"
-      }
-    }
+        {
+          "src": "sub-web/**",
+          "use": "@vercel/static"
+        },
+        {
+          "src": "subconverter/subconverter",
+          "use": "@vercel/node",
+          "config": {
+            "includeFiles": ["subconverter/**"],
+            "maxLambdaSize": "50mb"
+          }
+        }
     ]
     "routes": [
         {
