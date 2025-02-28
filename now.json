@@ -17,7 +17,7 @@
                 "includeFiles": [
                     "subconverter/**"
                 ],
-                "output": "/subconverter",
+                "output": "/subconverter"
             }
         }
     ],
