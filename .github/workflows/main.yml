@@ -1,4 +1,6 @@
 name: Update subconverter
+
+# 默认设置，在定时任务中使用
 env:
   # 提交说明的内容
   message: 'Update subconverter'
@@ -6,7 +8,7 @@ env:
   # release 从release中下载稳定版，可用下面的tag参数指定版本
   # build 拉取最新代码自行编译
   # action 从最新commit所关联github action处下载
-  branch: 'release'
+  branch: 'action'
   # 当branch参数设置为release时，下载指定版本的release
   # 设置为latest时，自动选择最新版本release
   tag: 'latest'
@@ -21,7 +23,7 @@ on:
   # 删除以下行首的#号启用定时任务
   # schedule:
   #   - cron: 0 0 * * SUN
-  # 点击star运行
+  # star运行
   # 删除以下行首的#号启用
   #watch:
   #  types: [started]
@@ -29,20 +31,29 @@ on:
     inputs:
       message:
         description: 'commit message'
-        required: false
+        required: true
         default: 'Update subconverter'
       branch:
-        description: 'update subconverter from where?(action/build/release)'
-        required: false
+        description: 'update subconverter from where?'
+        required: true
         default: 'action'
+        type: choice
+        options:
+        - action
+        - build
+        - release
       tag:
         description: 'specific version tag if branch is "release"'
         required: false
         default: 'latest'
       modify_method:
         description: 'modify configuration file by sed or /files'
-        required: false
-        default: 'sed'
+        required: true
+        default: 'files'
+        type: choice
+        options:
+        - sed
+        - files
 
 concurrency: 
   group: subconverter
@@ -90,8 +101,8 @@ jobs:
       uses: fountainhead/action-wait-for-check@v1.0.0
       id: wait
       with:
-        token: ${{ secrets.REPO_TOKEN }}
-        checkName: "Linux x86_64 Build"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        checkName: "Linux amd64 Build"
         ref: ${{ steps.get_sha.outputs.sha }}
         repo: subconverter
         owner: tindy2013
@@ -153,7 +164,7 @@ jobs:
           cp -f subconverter/pref.example.ini subconverter/pref.ini
         fi
         sed -i 's/api_mode=false/api_mode=true/g' subconverter/pref.ini
-        sed -i 's/managed_config_prefix=http:\/\/127.0.0.1:25500/managed_config_prefix=https:\/\/sub-now-ten.vercel.app/g' subconverter/pref.ini
+        sed -i 's/managed_config_prefix=http:\/\/127.0.0.1:25500/managed_config_prefix=https:\/\/sub-beta.vercel.app/g' subconverter/pref.ini
         sed -i 's/async_fetch_ruleset=false/async_fetch_ruleset=true/g' subconverter/pref.ini
         sed -i 's/max_concurrent_threads=./max_concurrent_threads=1/g' subconverter/pref.ini
     - name: Modify pref.ini by files
@@ -169,4 +180,4 @@ jobs:
         message: ${{ env.message }}
         add: "-A"
       env:
-        token: ${{ secrets.REPO_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
