@@ -4,23 +4,19 @@
         "silent": true
     },
     "builds": [
-        {
-            "src": "sub-web/**",
-            "use": "@now/static"
-        },
-        {
-            "src": "subconverter/subconverter.exe",
-            "use": "now-static-bin",
-            "config": {
-                "port": 25500,
-                "timeout": 1500,
-                "includeFiles": [
-                    "subconverter/**"
-                ],
-                "output": "subconverter" 
-            }
-        }
-    ],
+    {
+      "src": "sub-web/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "subconverter/subconverter",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["subconverter/**"],
+        "maxLambdaSize": "50mb"  // 确保二进制文件不超过限制
+      }
+    }
+    ]
     "routes": [
         {
             "src": "/(js|css|fonts)/(.*)",
@@ -41,8 +37,8 @@
             "dest": "sub-web/favicon.ico"
         },
         {
-            "src": "/(.*)",
-            "dest": "subconverter/subconverter.exe"
+            "src": "/sub/(.*)",
+            "dest": "subconverter/subconverter"
         }
     ]
 }
