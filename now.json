@@ -14,7 +14,6 @@
             "config": {
                 "port": 25500,
                 "timeout": 1500,
-                "output": ".",
                 "includeFiles": [
                     "subconverter/**"
                 ]
@@ -42,7 +41,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "/subconverter/subconverter.exe"
+            "dest": "subconverter/subconverter.exe"
         }
     ]
 }
