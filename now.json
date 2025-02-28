@@ -13,9 +13,9 @@
             "use": "@vercel/community/static-bin",
             "config": {
                 "port": 25500,
-                "timeout": 30,  // 单位：秒
+                "timeout": 30,
                 "env": {
-                    "SUB_API_KEY": "$MY_ENV_VAR"  // 注入环境变量
+                    "SUB_API_KEY": "$MY_ENV_VAR"
                 }
             }
         }
