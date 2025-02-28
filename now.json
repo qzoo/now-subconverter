@@ -10,6 +10,7 @@
             "use": "@vercel/node",
             "config": {
                 "maxLambdaSize": "50mb",
+                "maxDuration": 60,
                 "includeFiles": [
                     "subconverter/**"
                 ]
@@ -36,7 +37,7 @@
             "dest": "sub-web/favicon.ico"
         },
         {
-            "src": "/sub",
+            "src": "/",
             "dest": "subconverter/server.js"
         }
     ]
