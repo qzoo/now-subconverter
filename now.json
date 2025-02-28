@@ -10,13 +10,13 @@
         },
         {
             "src": "subconverter/subconverter.exe",
-            "use": "now-static-bin",
+            "use": "@vercel/community/static-bin",
             "config": {
                 "port": 25500,
-                "timeout": 1500,
-                "includeFiles": [
-                    "subconverter/**"
-                ]
+                "timeout": 30,  // 单位：秒
+                "env": {
+                    "SUB_API_KEY": "$MY_ENV_VAR"  // 注入环境变量
+                }
             }
         }
     ],
