@@ -20,7 +20,7 @@
             }
         }
     ],
-    "output": "build/output",
+    "output": "",
     "routes": [
         {
             "src": "/(js|css|fonts)/(.*)",
