@@ -9,7 +9,7 @@
             "use": "@now/static"
         },
         {
-            "src": "./subconverter/subconverter.exe",
+            "src": "/subconverter/subconverter.exe",
             "use": "now-static-bin",
             "config": {
                 "port": 25500,
