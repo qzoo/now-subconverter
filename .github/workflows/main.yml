@@ -121,8 +121,7 @@ jobs:
       run: |
         sudo rm -rf subconverter
         mv -f /tmp/subconverter subconverter
-        mv -f subconverter/subconverter subconverter/subconverter.exe
-        sudo chmod +x subconverter/subconverter.exe
+        sudo chmod +x subconverter/subconverter
    
     - name: '[build]Prepare'
       if: ${{ env.branch == 'build' }}
@@ -154,8 +153,7 @@ jobs:
         sudo rm -rf subconverter/*
         tar -xzf subconverter_linux64.tar.gz -C ./
         sudo rm -f subconverter_linux64.tar.gz
-        mv -f subconverter/subconverter subconverter/subconverter.exe
-        sudo chmod +x subconverter/subconverter.exe
+        sudo chmod +x subconverter/subconverter
     
     - name: Modify pref.ini by sed
       if: ${{ env.modify_method == 'sed' }}
