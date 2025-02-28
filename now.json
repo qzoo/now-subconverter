@@ -3,6 +3,7 @@
     "github": {
         "silent": true
     },
+    "public": true,
     "builds": [
         {
             "src": "sub-web/**",
