@@ -11,6 +11,7 @@
         {
             "src": "subconverter/subconverter.exe",
             "use": "now-static-bin",
+            "output": "/subconverter",
             "config": {
                 "port": 25500,
                 "timeout": 1500,
@@ -20,7 +21,6 @@
             }
         }
     ],
-    "output": "/subconverter",
     "routes": [
         {
             "src": "/(js|css|fonts)/(.*)",
