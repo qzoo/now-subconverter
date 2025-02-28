@@ -1,48 +1,61 @@
 {
-    "version": 2,
-    "github": {
-        "silent": true
+  "version": 2,
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "sub-web/**",
+      "use": "@vercel/static"
     },
-    "public": true,
-    "builds": [
+    {
+      "src": "subconverter/subconverter.exe",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "subconverter/**/*",
+          "profiles/**/*.ini"
+        ]
+      }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(js|css|fonts)/(.*)",
+      "destination": "sub-web/$1/$2",
+      "headers": [
         {
-            "src": "sub-web/**",
-            "use": "@now/static"
-        },
-        {
-            "src": "subconverter/subconverter.exe",
-            "use": "now-static-bin@canary",
-            "config": {
-                "port": 25500,
-                "timeout": 1500,
-                "includeFiles": [
-                    "subconverter/**"
-                ]
-            }
+          "key": "Cache-Control",
+          "value": "max-age=31536000, immutable"
         }
-    ],
-    "routes": [
+      ]
+    },
+    {
+      "source": "/",
+      "destination": "/sub-web/index.html"
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/sub-web/favicon.ico"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/subconverter/subconverter.exe"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
         {
-            "src": "/(js|css|fonts)/(.*)",
-            "headers": {
-                "cache-control": "max-age=31536000, immutable"
-            },
-            "dest": "sub-web/$1/$2"
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
         },
         {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/",
-            "dest": "sub-web/index.html"
-        },
-        {
-            "src": "/favicon\\.ico",
-            "dest": "sub-web/favicon.ico"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "subconverter/subconverter.exe"
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
-    ]
+      ]
+    }
+  ]
 }
