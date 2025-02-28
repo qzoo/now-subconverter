@@ -1,52 +1,66 @@
 {
-    "version": 2,
-    "github": {
-        "silent": true
+  "version": 2,
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "sub-web/**",
+      "use": "@vercel/static"  // 🔼 更新为官方支持的构建器名称
     },
-    "builds": [
-        {
-            "src": "sub-web/**",
-            "use": "@now/static"
-        },
-        {
-            "src": "subconverter/subconverter.exe",
-            "use": "now-static-bin",
-            "config": {
-                "port": 25500,
-                "timeout": 1500,
-                "includeFiles": [
-                    "subconverter/**"
-                ]
-            }
-        }
-    ],
-    "rewrites": [
+    {
+      "src": "subconverter/subconverter.exe", 
+      "use": "@vercel/node",   // 🔼 改用 Node.js 构建器启动二进制
+      "config": {
+        "includeFiles": [      // ✅ 确保包含所有依赖文件
+          "subconverter/**/*",
+          "profiles/**/*.ini"
+        ]
+      }
+    }
+  ],
+  "rewrites": [
+    // ======================== #
+    // 第一步：处理静态资源缓存 (优先级最高)
+    // ======================== #
     {
       "source": "/(js|css|fonts)/(.*)",
-      "destination": "/sub-web/$1/$2"
+      "destination": "sub-web/$1/$2",
+      "headers": {
+        "Cache-Control": "max-age=31536000, immutable"
+      }
     },
+    
+    // ======================== #
+    // 第二步：处理 HTML 页面路由
+    // ======================== #
     {
       "source": "/",
-      "destination": "/sub-web/index.html"
+      "destination": "/sub-web/index.html"  // 🔼 清晰路径分隔
     },
     {
       "source": "/favicon.ico",
       "destination": "/sub-web/favicon.ico"
     },
+
+    // ======================== #
+    // 第三步：API 请求转给 subconverter
+    // ======================== #
     {
-      "source": "/(.*)",
+      "source": "/(.*)",  // 🔄 拦截剩余所有请求
       "destination": "/subconverter/subconverter.exe"
     }
   ],
   "headers": [
+    // ======================== #
+    // 全局默认响应头 
+    // ======================== #
     {
-      "source": "/(js|css|fonts)/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "max-age=31536000, immutable"
-        }
-      ]
+      "source": "/(.*)",
+      "headers": {
+        "X-Content-Type-Options": "nosniff",
+        "Referrer-Policy": "strict-origin-when-cross-origin"
+      }
     }
   ]
 }
