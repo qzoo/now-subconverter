@@ -14,7 +14,7 @@
             "config": {
                 "port": 25500,
                 "timeout": 1500,
-                "output": .
+                "output": "."
                 "includeFiles": [
                     "subconverter/**"
                 ]
