@@ -14,13 +14,13 @@
             "config": {
                 "port": 25500,
                 "timeout": 1500,
-                "output": "/subconverter",
                 "includeFiles": [
                     "subconverter/**"
                 ]
             }
         }
     ],
+    "output": "/subconverter",
     "routes": [
         {
             "src": "/(js|css|fonts)/(.*)",
