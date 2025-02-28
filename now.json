@@ -9,11 +9,10 @@
             "use": "@now/static"
         },
         {
-            "src": "subconverter/subconverter.exe",
-            "use": "now-static-bin",
+            "src": "subconverter/server.js",  // 指定新的入口文件
+            "use": "@now/node",
             "config": {
-                "port": 25500,
-                "timeout": 1500,
+                "maxLambdaSize": "50mb",
                 "includeFiles": [
                     "subconverter/**"
                 ]
@@ -41,7 +40,7 @@
         },
         {
             "src": "/(.*)",
-            "dest": "subconverter/subconverter.exe"
+            "dest": "server.js"
         }
     ]
 }
