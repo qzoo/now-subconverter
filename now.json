@@ -1,44 +1,44 @@
 {
-    "version": 2,
-    "github": {
-        "silent": true
+  "version": 2,
+  "github": {
+    "silent": true
+  },
+  "builds": [
+    {
+      "src": "sub-web/**",
+      "use": "@vercel/static"
     },
-    "builds": [
-        {
-          "src": "sub-web/**",
-          "use": "@vercel/static"
-        },
-        {
-          "src": "subconverter/subconverter",
-          "use": "@vercel/node",
-          "config": {
-            "includeFiles": ["subconverter/**"],
-            "maxLambdaSize": "50mb"
-          }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(js|css|fonts)/(.*)",
-            "headers": {
-                "cache-control": "max-age=31536000, immutable"
-            },
-            "dest": "sub-web/$1/$2"
-        },
-        {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/",
-            "dest": "sub-web/index.html"
-        },
-        {
-            "src": "/favicon\\.ico",
-            "dest": "sub-web/favicon.ico"
-        },
-        {
-            "src": "/sub/(.*)",
-            "dest": "subconverter/shim.js"
-        }
-    ]
+    {
+      "src": "subconverter/shim.js",
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "subconverter/subconverter",
+          "subconverter/pref.ini",
+          "subconverter/rules/**",
+          "subconverter/profiles/**"
+        ],
+        "maxLambdaSize": "50mb"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(js|css|fonts)/(.*)",
+      "headers": { "cache-control": "max-age=31536000, immutable" },
+      "dest": "sub-web/$1/$2"
+    },
+    {
+      "src": "/",
+      "dest": "sub-web/index.html"
+    },
+    {
+      "src": "/favicon\\.ico",
+      "dest": "sub-web/favicon.ico"
+    },
+    {
+      "src": "/sub/(.*)",     // 匹配 /sub/ 开头的请求
+      "dest": "subconverter/shim.js"
+    }
+  ]
 }
