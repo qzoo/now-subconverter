@@ -7,17 +7,6 @@
         {
             "src": "sub-web/**",
             "use": "@now/static"
-        },
-        {
-            "src": "subconverter/subconverter",
-            "use": "now-static-bin",
-            "config": {
-                "port": 25500,
-                "timeout": 1500,
-                "includeFiles": [
-                    "subconverter/**"
-                ]
-            }
         }
     ],
     "routes": [
@@ -32,16 +21,12 @@
             "handle": "filesystem"
         },
         {
-            "src": "/",
+            "src": "/(.*)",
             "dest": "sub-web/index.html"
         },
         {
             "src": "/favicon\\.ico",
             "dest": "sub-web/favicon.ico"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "subconverter/subconverter.exe"
         }
     ]
 }
