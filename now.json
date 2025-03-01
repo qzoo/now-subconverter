@@ -21,8 +21,8 @@
             "handle": "filesystem"
         },
         {
-            "src": "/(.*)",
-            "dest": "sub-web/index.html"
+            "src": "/",
+            "dest": "sub-web/"
         },
         {
             "src": "/favicon\\.ico",
