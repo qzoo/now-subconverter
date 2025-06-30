@@ -22,7 +22,7 @@ jobs:
     - name: Update sub-web
       run: |
         rm -rf sub-web
-        git clone https://github.com/qzoo/sub-web.git
+        git clone https://github.com/qzoo/sub-web-modify.git
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
