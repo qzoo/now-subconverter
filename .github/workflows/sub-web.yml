@@ -31,7 +31,7 @@ jobs:
 
     - name: Get dependencies and build
       run: |
-        cd sub-web
+        cd sub-web-modify
         yarn install
         yarn build
         
@@ -39,8 +39,8 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE
         mkdir temp
-        sudo cp -rf sub-web/dist/* temp/
-        sudo rm -rf sub-web
+        sudo cp -rf sub-web-modify/dist/* temp/
+        sudo rm -rf sub-web-modify
         mv temp sub-web
         
     - name: Add & Commit
